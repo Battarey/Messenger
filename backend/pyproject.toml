@@ -3,6 +3,7 @@ name = "Eta"
 version = "0.1.0"
 description = "Backend for Eta application"
 authors = ["Eta developer"]
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.12"
