@@ -9,6 +9,4 @@
 - **[docs](./docs)** - Документация
 - **[frontend](./frontend)** - Frontend
 
-## Запуск:
-
 
