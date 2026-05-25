@@ -1,24 +1,48 @@
-# Frontend
+# Паттерны и стандарты
 
-1. 
+## Паттерны для Frontend
 
-# Backend
 
-1. Для зависимостей использовать Poetry
-2. Использовать паттерн CQRC
-3. Для конфигурации использовать Стандарт Config via Environment
-4. Будет использоваться событийно ориентированный подход (EDA)
-5. Для документирования в коде использовать Google-style с Args/Returns/Raises
-6. Использовать принцип инверсии зависимостей (DIP)
-7. Bootstrap
-8. outbox-паттерн
-9. Использование “pre-commit”
-10. Использование deptry, Vulture, Ruff
-11. Использование паттерна AAA для написания тестов
-12. CI/CD
-13. Разбиение на высокоуровневый модуль (бизнес-логика) и низкоуровневый (API, БД)
-14. Создание shared пакета
+---
 
-# Docker
-1. multi stage builds докерфайлов
+## Паттерны для Backend
 
+### 1. Чистая архитектура (Clean Architecture)
+Реализация слоситой архитектуры, слои:
+- **Представление (FastAPI / Routers)**
+- **Юз-кейсы (Use Cases)**
+- **Сервисы (Services)**
+- **Репозитории (Repository / БД)**
+- **Сущности (Entities / Models)**
+
+### 2. Принцип инверсии зависимостей (DIP - Dependency Inversion Principle)
+
+### 3. CQRS (Command Query Responsibility Segregation)
+
+### 4. Событийно-ориентированный подход (EDA - Event-Driven Architecture)
+
+### 5. Outbox-паттерн (Transactional Outbox)
+
+### 6. Bootstrap (Инициализация приложения)
+
+### 7. Использование shared пакета
+
+### 8. Управление зависимостями через Poetry
+
+### 9. Config via Environment (Конфигурация через окружение)
+
+### 10. Google-style Docstrings
+
+### 11. Использование паттерна AAA (Arrange-Act-Assert)
+
+### 12. Качество кода и линтинг (Ruff, Vulture, deptry)
+
+### 13. Использование pre-commit
+
+### 14. CI/CD (Continuous Integration / Continuous Deployment)
+
+---
+
+## Паттерны для Docker
+
+### 1. Multi-stage Builds (Многоэтапные сборки)
