@@ -1,6 +1,5 @@
 import uuid
 from datetime import datetime
-from typing import List, Optional
 
 from sqlalchemy import Boolean, DateTime, ForeignKey, String, text
 from sqlalchemy.dialects.postgresql import UUID
@@ -54,7 +53,7 @@ class Account(Base):
         uselist=False,
         cascade="all, delete-orphan",
     )
-    sessions: Mapped[List["Session"]] = relationship(
+    sessions: Mapped[list["Session"]] = relationship(
         "Session",
         back_populates="account",
         cascade="all, delete-orphan",
@@ -80,17 +79,17 @@ class Profile(Base):
         nullable=False,
         comment="Уникальный логин пользователя",
     )
-    display_name: Mapped[Optional[str]] = mapped_column(
+    display_name: Mapped[str | None] = mapped_column(
         String,
         nullable=True,
         comment="Отображаемое имя (публичное)",
     )
-    avatar_url: Mapped[Optional[str]] = mapped_column(
+    avatar_url: Mapped[str | None] = mapped_column(
         String,
         nullable=True,
         comment="Ссылка на аватар",
     )
-    bio: Mapped[Optional[str]] = mapped_column(
+    bio: Mapped[str | None] = mapped_column(
         String(200),
         nullable=True,
         comment="Описание профиля (до 200 символов)",
@@ -135,9 +134,7 @@ class UISettings(Base):
     )
 
     # Отношения
-    account: Mapped["Account"] = relationship(
-        "Account", back_populates="ui_settings"
-    )
+    account: Mapped["Account"] = relationship("Account", back_populates="ui_settings")
 
 
 class Session(Base):
@@ -165,12 +162,12 @@ class Session(Base):
         nullable=False,
         comment="Хэш Refresh-токена",
     )
-    device_info: Mapped[Optional[str]] = mapped_column(
+    device_info: Mapped[str | None] = mapped_column(
         String,
         nullable=True,
         comment="Информация об устройстве",
     )
-    ip_address: Mapped[Optional[str]] = mapped_column(
+    ip_address: Mapped[str | None] = mapped_column(
         String,
         nullable=True,
         comment="IP-адрес сессии",

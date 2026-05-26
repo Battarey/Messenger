@@ -31,3 +31,8 @@ repos:
       - id: mypy
         args: [ --config-file=backend/pyproject.toml ]
         files: ^backend/
+        additional_dependencies:
+          - pydantic>=2.0
+          - pydantic-settings>=2.0
+          - sqlalchemy>=2.0
+          - types-redis
