@@ -135,9 +135,7 @@ class UISettings(Base):
     )
 
     # Отношения
-    account: Mapped["Account"] = relationship(
-        "Account", back_populates="ui_settings"
-    )
+    account: Mapped["Account"] = relationship("Account", back_populates="ui_settings")
 
 
 class Session(Base):

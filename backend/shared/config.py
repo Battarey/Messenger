@@ -13,8 +13,8 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    ENV: str            # Режим окружения
-    LOG_LEVEL: str      # Уровень логирования
+    ENV: str  # Режим окружения
+    LOG_LEVEL: str  # Уровень логирования
 
     POSTGRES_HOST: str
     POSTGRES_PORT: int
