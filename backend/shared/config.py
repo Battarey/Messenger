@@ -2,7 +2,10 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    """Класс конфигурации приложения, считывающий переменные из окружения и .env файла."""
+    """Класс конфигурации приложения.
+
+    Считывает переменные из окружения и .env файла.
+    """
 
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -10,9 +13,9 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    ENV: str            # Режим окружения 
+    ENV: str            # Режим окружения
     LOG_LEVEL: str      # Уровень логирования
-    
+
     POSTGRES_HOST: str
     POSTGRES_PORT: int
     POSTGRES_USER: str

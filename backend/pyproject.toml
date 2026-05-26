@@ -40,7 +40,10 @@ select = [
     "PGH", # pygrep-hooks
     "RUF", # ruff-specific rules
 ]
-ignore = []
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.per-file-ignores]
+"migrations/versions/*.py" = ["E501"]
 
 [tool.ruff.lint.isort]
 combine-as-imports = true
